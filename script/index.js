@@ -20,11 +20,16 @@ img.style.cursor = "pointer";
 paragraphe.textContent = "Just press the button above to toggle!";
 
 img.addEventListener("click", () => {
-  if (body.style.backgroundColor === "white") {
-    LightToDark();
-  } else if (body.style.backgroundColor === "black") {
-    DarktoLigh();
-  }
+  // if (body.style.backgroundColor === "white") {
+  //   LightToDark();
+  // } else if (body.style.backgroundColor === "black") {
+  //   DarktoLigh();
+  // }
+  const a = {
+    white: LightToDark,
+    black: DarktoLigh,
+  };
+  a[body.style.backgroundColor]();
 });
 const LightToDark = () => {
   body.style.backgroundColor = "black";
